@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SEPHORA - Iniciar Sesión</title>
+    <style>
+        body { background-color: white; color: black; font-family: "Times New Roman", serif; margin: 0; padding: 0; }
+        .formulario { width: 300px; margin: 50px auto; border: 1px solid black; padding: 20px; text-align: center; }
+        input { width: 90%; padding: 8px; margin: 8px 0; border: 1px solid black; }
+        button { background-color: black; color: white; border: none; padding: 10px; width: 100%; cursor: pointer; font-family: "Times New Roman", serif; }
+    </style>
+</head>
+<body>
+    <div class="formulario">
+        <h2>Iniciar Sesión</h2>
+        <form onsubmit="iniciarSesion(event)">
+            <input type="text" id="nombre" placeholder="Tu nombre o usuario" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <script>
+        function iniciarSesion(event) {
+            event.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            localStorage.setItem('usuario_nombre', nombre);
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
